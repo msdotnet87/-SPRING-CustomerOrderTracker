@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Panel</title>
+    <link rel="stylesheet"  th:href="@{../css/general.css}">
+
+</head>
+
+<body>
+<div th:insert="menu.html :: div" ></div>
+<div>
+
+    <br><br>
+    <table>
+        <thead>
+        <tr>
+            <th>Opłaty</th>
+        </tr>
+
+        <tr>
+            <th>ID</th>
+            <th>MIESIAC</th>
+            <th>ROK</th>
+            <th>PRĄD</th>
+            <th>GAZ</th>
+            <th>RATA</th>
+            <th>INTERNET</th>
+            <th>INNE</th>
+        </tr>
+        <thead>
+        <tbody th:each=" oplaty : ${oplaty}">
+        <tr>
+            <td th:text="${oplaty.id}"></td>
+            <td th:text="${oplaty.miesiac}"></td>
+            <td th:text="${oplaty.rok}"></td>
+            <td th:text="${oplaty.prad}"></td>
+            <td th:text="${oplaty.gaz}"></td>
+            <td th:text="${oplaty.rata}"></td>
+            <td th:text="${oplaty.internet}"></td>
+            <td th:text="${oplaty.inne}"></td>
+
+        </tr>
+
+        </tbody>
+        <table/>
+        <div class="center_button">
+            <a class="white_text" href="/DodajOplaty"><button >Dodaj nowy miesiąc</a>
+            <a class="white_text" href="/Tracker"><button >Tracker</a>
+        </div>
+</div>
+
+</body>
+</html>

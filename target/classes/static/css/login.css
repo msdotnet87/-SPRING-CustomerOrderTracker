@@ -1,0 +1,69 @@
+:root{
+	--primary-blue: #3452ff;
+	--secondary-blue: #0127ff;
+}
+
+
+
+.form-wrapper{
+	display:flex;
+}
+
+.login-form{
+	display: flex;
+	height: auto;
+	flex-direction: column;
+	margin: auto;
+	margin-top: 40px;
+	padding: 15px 20px 15px 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border: 1px solid grey;
+}
+
+.text{
+	font-family: "Nunito", sans-serif;
+	font-weight: 700;
+	font-size: 1.3rem;
+}
+
+.login-element{
+	margin: auto;
+	max-width: 400px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.title{
+	font-family: "Nunito", sans-serif;
+	font-weight: 700;
+	font-size: 2rem;
+}
+
+.link{
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: var(--primary-blue);
+	padding: 5px 0 5px 0;
+}
+
+.input{
+	font-size: 1.3rem;
+	font-family: "Nunito", sans-serif;
+	padding: 4px;
+}
+
+.button{
+	font-size: 1.3rem;
+	font-family: "Nunito", sans-serif;
+	background-color: var(--primary-blue);
+	border: 1px solid var(--secondary-blue);
+	border-radius: 2px;
+	color: white;
+	padding: 5px 10px 5px 10px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.button:hover{
+	background-color: var(--secondary-blue);
+}

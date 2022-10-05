@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>User Panel</title>
+  <link rel="stylesheet"  th:href="@{../css/general.css}">
+
+</head>
+
+<body>
+<div th:insert="menu.html :: div" ></div>
+<div>
+
+  <br><br>
+  <table>
+    <thead>
+   <tr>
+     <th>LIST OF CUSTOMERS</th>
+   </tr>
+
+    <tr>
+      <th>ID</th>
+      <th>CUSTOMER</th>
+      <th>ADRESS</th>
+      <th>NIP</th>
+      <th>EDIT</th>
+        <th>DELETE</th>
+    </tr>
+    <thead>
+    <tbody th:each=" customer : ${allCustomer}">
+    <tr>
+      <td th:text="${customer.Id}"></td>
+      <td th:text="${customer.nip}"></td>
+      <td th:text="${customer.nazwaFirmy}"></td>
+      <td th:text="${customer.adres}"></td>
+      <td>
+
+        <button >
+
+            <a class="white_text" th:href="${'/editCustomer?id='+customer.id}"> EDIT</a>
+
+          </a>
+      </td>
+        <td>
+
+            <button >
+
+                <a class="white_text" th:href="${'/delCustomer?id='+customer.id}"> DELETE</a>
+
+                </a>
+        </td>
+    </tr>
+
+    </tbody>
+    <table/>
+    <div class="center_button">
+      <a class="white_text" href="/add_customer"><button >Add new customer</a>
+    </div>
+</div>
+
+</body>
+</html>

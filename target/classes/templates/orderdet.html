@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>User Panel</title>
+  <link rel="stylesheet"  th:href="@{../css/general.css}">
+
+</head>
+<body>
+<div th:insert="menu.html :: div" ></div>
+<div>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>NAZWA ZLECENIODAWCY</th>
+      <th>SZCZEGÓŁY</th>
+      <th>DEADLINE</th>
+      <th>EDYCJA</th>
+    </tr>
+    <thead>
+    <tbody th:each=" order : ${allOrders}">
+    <tr>
+      <td th:text="${order.idzlecenia}"></td>
+      <td th:text="${order.nazwaFirmy}"></td>
+      <td th:text="${order.szczegoly}"></td>
+      <td th:text="${order.deadline}"></td>
+      <td>
+        <a class="white_text" th:href="${'/editOrder?id='+order.idzlecenia}"><button>Edit</a></td>
+    </tr>
+
+    </tbody>
+    <table/>
+    <div class="center_button">
+      <a class="white_text" href="/add_Order"><button >Add new Order</a>
+    </div>
+</div>
+
+
+
+</body>
+</html>

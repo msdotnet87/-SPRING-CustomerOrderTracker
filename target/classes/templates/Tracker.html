@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>User Panel</title>
+  <link rel="stylesheet"  th:href="@{../css/chart.css}">
+
+</head>
+
+
+
+<body>
+<div class="box">
+
+<div>
+  <table class="graph">
+    <caption>Zestawienie oplat Gaz</caption>
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Gaz</th>
+    </tr>
+    </thead>
+    <tbody >
+  <tr th:each=" oplaty : ${oplaty}" th:style="'height:'+${oplaty.gaz/10}+'%'"><th scope="row"></th><td ><span th:text="${oplaty.gaz}"></span></td>
+  </tr>
+  </tbody>
+  </table>
+</div>
+
+  <div>
+    <table class="graph">
+      <caption>Zestawienie oplat Prąd</caption>
+      <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Gaz</th>
+      </tr>
+      </thead>
+    <tbody >
+    <tr th:each=" oplaty : ${oplaty}" th:style="'height:'+${oplaty.prad/4}+'%'"><th scope="row"></th><td ><span th:text="${oplaty.prad}"></span></td>
+    </tr>
+    </tbody>
+    </table>
+</div>
+
+
+
+<div>
+    <table class="graph">
+      <caption>Zestawienie oplat Rata Kredytu</caption>
+      <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Gaz</th>
+      </tr>
+      </thead>
+    <tbody >
+    <tr th:each=" oplaty : ${oplaty}" th:style="'height:'+${oplaty.rata/20}+'%'"><th scope="row"></th><td ><span th:text="${oplaty.rata}"></span></td>
+    </tr>
+    </tbody>
+    </table>
+
+</div>
+
+
+
+
+    <div>
+      <br><br><br><br><br><br>
+            <table class="graph">
+              <caption>Zestawienie oplat Inne</caption>
+              <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Gaz</th>
+              </tr>
+              </thead>
+    <tbody >
+    <tr th:each=" oplaty : ${oplaty}" th:style="'height:'+${oplaty.inne/10}+'%'"><th scope="row"></th><td ><span th:text="${oplaty.inne}"></span></td>
+    </tr>
+    </tbody>
+  </table>
+
+    </div>
+
+
+</div>
+<br><br><br><br><br>
+<a href="api/oplaty"><button>Powrót</button></a>
+</body>
+</html>

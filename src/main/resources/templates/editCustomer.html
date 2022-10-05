@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>User Panel</title>
+  <link rel="stylesheet"  th:href="@{../css/general.css}">
+
+</head>
+<body>
+<div th:insert="menu.html :: div" ></div>
+<div class="form-wrapper">
+  <form class="login-form" action="/editCustomer" method='POST'>
+
+
+    <h1 class="title">Edit Customer</h1>
+
+    <div class="text">Customer NIP:</div>
+    <input class="id" type='text' name="Id" th:value="${customer.id}">
+    <br>
+
+    <input class="input" type='text' name="nip" th:value="${customer.nip}">
+    <br><br>
+
+
+    <div class="text">Name of the Customer:</div>
+    <input class="input" type='text' name="name" th:value="${customer.adres}">
+    <br><br>
+
+    <div class="text">Customer Adress:</div>
+    <input class="input" type='text' name="adress" th:value="${customer.nazwaFirmy}">
+    <br><br>
+
+
+
+    <input class="button" name="submit" type="submit" value="Update">
+
+  </form>
+</div>
+</body>
+</html>
